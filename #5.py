@@ -2,20 +2,39 @@ __author__ = 'Nafiul Islam'
 __title__ = 'Smallest Multiple'
 
 
-def main():
+def main(begin, end):
+    list_of_numbers = range(begin, end+1)
+    divisors = []
+    true_flags = 0
+
+    i = 2
+    while i <= end:
+        for number in list_of_numbers:
+            if number % i == 0:
+                true_flags += 1
+        if true_flags >= 2:
+            divisors.append(i)
+            for index in xrange(len(list_of_numbers)):
+                if list_of_numbers[index] % i == 0:
+                    list_of_numbers[index] /= i
+        else:
+            i += 1
+        true_flags = 0
+
+    print list_of_numbers
+    print divisors
+
     max_number = 1
-    list_of_possibilities = []
-    for number in xrange(1, 11):
+
+    for number in list_of_numbers:
         max_number *= number
 
     print max_number
 
-    while max_number % 2 == 0 and max_number != 0:
-        max_number /= 2
-        list_of_possibilities.append(max_number)
-        print max_number
+    for div in divisors:
+        max_number *= div
 
-    print list_of_possibilities
+    print max_number
 
 if __name__ == "__main__":
-    main()
+    main(1, 20)
