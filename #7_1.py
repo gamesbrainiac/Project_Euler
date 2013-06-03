@@ -1,6 +1,9 @@
 __author__ = 'Nafiul Islam'
 __title__ = '10001st prime'
 
+# This is probably a very inefficient way of solving the problem, so
+# if anyone reading this finds a better one, please let me know.
+
 
 def main(argv):
     list_primes = [2]
