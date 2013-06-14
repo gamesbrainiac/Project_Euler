@@ -8,20 +8,34 @@ __title__ = 'Summation of primes'
 # Modelled after the sieve of Eratosthenes
 
 def main(limit=1000):
-    limitn = limit+1  # To account for 0
-    not_prime = [False] * limitn
-    primes = []
+    # Because xrange() goes to limit-1
+    limitn = limit+1
 
+    # Creates a list, False means the index is a prime.
+    not_prime = [False] * limitn
+
+    # Creates a list to append indexes that are primes
+    # primes = []
+
+    # total for total sum
     total = 0
+
+    # Looping over all the values up to limitn from 2
     for i in xrange(2, limitn):
+        # If index is a prime number, then skip all else
         if not_prime[i]:
             continue
+        # If index is not a prime number
+        # Change all multiples of that number,
+        # starting from its double to True,
         for f in xrange(i*2, limitn, i):
+            # meaning making them not primes
             not_prime[f] = True
 
-        primes.append(i)
+        # primes.append(i)
         total += i
 
+    # Prints total
     print '== Total =='
     print total
 
