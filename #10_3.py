@@ -4,14 +4,18 @@ __title__ = 'Summation of primes'
 # From stackoverflow, the #10_1 and #10_2 are my attempts
 
 from math import *
+import time
 
 
 def sieveOfAtkin(end):
-    """sieveOfAtkin(end): return a list of all the prime numbers <end
-    using the Sieve of Atkin."""
+    """
+    sieveOfAtkin(end): return a list of all the prime numbers <end
+    using the Sieve of Atkin.
+    """
     # Code by Steve Krenzel, <Sgk284@gmail.com>, improved
     # Code: http://krenzel.info/?p=83
     # Info: http://en.wikipedia.org/wiki/Sieve_of_Atkin
+
     assert end > 0
     lng = ((end-1) // 2)
     sieve = [False] * (lng + 1)
@@ -78,10 +82,12 @@ def sieveOfAtkin(end):
     return primes
 
 if __name__ == "__main__":
+    start = time.time()
     total = 0
-    list_of_primes = sieveOfAtkin(2000000)
+    list_of_primes = sieveOfAtkin(1000000)
 
     for val in list_of_primes:
         total += val
 
     print total
+    print time.time() - start, 'seconds'

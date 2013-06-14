@@ -1,3 +1,5 @@
+import time
+
 __author__ = 'Nafiul Islam'
 __title__ = 'Summation of primes'
 
@@ -23,9 +25,10 @@ def main(*args):
             # print '@ Loop:', loop, list_primes[-1], '||', 'Difference:', loop - list_primes[-1]
             pass
 
-    print ' == Results == '
-    print list_primes[-1]
+    print ' == Total == '
     print total
 
 if __name__ == "__main__":
-    main(10,)
+    start_time = time.time()
+    main(100000,)
+    print time.time() - start_time, "seconds"
