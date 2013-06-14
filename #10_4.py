@@ -8,21 +8,24 @@ __title__ = 'Summation of primes'
 # Modelled after the sieve of Eratosthenes
 
 def main(limit=1000):
-    list_of_numbers = [True] * limit
-    list_of_numbers[0] = list_of_numbers[1] = False
+    limitn = limit+1  # To account for 0
+    not_prime = [False] * limitn
+    primes = []
 
     total = 0
-    for (i, isprime) in enumerate(list_of_numbers):
-        if isprime:
-            yield i
-            total += i
-            for n in xrange(i*i, limit, i):
-                list_of_numbers[n] = False
+    for i in xrange(2, limitn):
+        if not_prime[i]:
+            continue
+        for f in xrange(i*2, limitn, i):
+            not_prime[f] = True
+
+        primes.append(i)
+        total += i
 
     print '== Total =='
     print total
 
 if __name__ == "__main__":
     start_time = time.time()
-    main(100000,)
+    main(1000000,)
     print time.time() - start_time, "seconds"
