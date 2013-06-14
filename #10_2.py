@@ -14,7 +14,7 @@ def main(*args):
         list_to_remove = [n * i for i in list_of_numbers[:args[0]/n-1]]
         for r in list_to_remove:
             try:
-                list_of_numbers.remove(r)
+                list_of_numbers.remove(r)  # Possibly expensive
             except ValueError:
                 pass
 
