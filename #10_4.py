@@ -36,10 +36,10 @@ def main(limit=1000):
         total += i
 
     # Prints total
-    print '== Total =='
-    print total
+    print('== Total ==')
+    print(total)
 
 if __name__ == "__main__":
     start_time = time.time()
     main(1000000,)
-    print time.time() - start_time, "seconds"
+    print(time.time() - start_time, "seconds")

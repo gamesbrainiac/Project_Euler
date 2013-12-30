@@ -23,14 +23,14 @@ def main(*args):
     total = 0
     for var in list_of_numbers:
         total += var
-    print '== Total =='
-    print total
+    print('== Total ==')
+    print(total)
     # print list_of_numbers
 
 if __name__ == "__main__":
     start_time = time.time()
     main(100000,)
-    print time.time() - start_time, "seconds"
+    print(time.time() - start_time, "seconds")
 
 # Results
 # == Total ==
