@@ -22,4 +22,4 @@ if __name__ == "__main__":
             sumOfNumbers += fibonacci(var)
         var += 1
 
-    print sumOfNumbers
+    print(sumOfNumbers)

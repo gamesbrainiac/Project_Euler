@@ -3,7 +3,7 @@ import time
 __author__ = 'Nafiul Islam'
 __title__ = 'Summation of primes'
 
-# Very slow implementation, may take you half an hour
+# Very slow implementation, may take you 30 seconds
 
 
 def main(*args):
@@ -22,13 +22,13 @@ def main(*args):
         number += 1
         loop += 1
         if loop % 100:
-            # print '@ Loop:', loop, list_primes[-1], '||', 'Difference:', loop - list_primes[-1]
+            print('@ Loop:', loop, list_primes[-1], '||', 'Difference:', loop - list_primes[-1])
             pass
 
-    print ' == Total == '
-    print total
+    print(' == Total == ')
+    print(total)
 
 if __name__ == "__main__":
     start_time = time.time()
     main(100000,)
-    print time.time() - start_time, "seconds"
+    print(time.time() - start_time, "seconds")

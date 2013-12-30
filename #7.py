@@ -19,7 +19,7 @@ def main(argv):
         number += 1
         loop += 1
 
-    print 'Prime @', argv, 'is', list_primes[-1]
+    print('Prime @', argv, 'is', list_primes[-1])
 
 
 if __name__ == "__main__":

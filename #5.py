@@ -14,27 +14,27 @@ def main(begin, end):
                 true_flags += 1
         if true_flags >= 2:
             divisors.append(i)
-            for index in xrange(len(list_of_numbers)):
+            for index in range(len(list_of_numbers)):
                 if list_of_numbers[index] % i == 0:
                     list_of_numbers[index] /= i
         else:
             i += 1
         true_flags = 0
 
-    print list_of_numbers
-    print divisors
+    print(list_of_numbers)
+    print(divisors)
 
     max_number = 1
 
     for number in list_of_numbers:
         max_number *= number
 
-    print max_number
+    print(max_number)
 
     for div in divisors:
         max_number *= div
 
-    print max_number
+    print(max_number)
 
 if __name__ == "__main__":
     main(1, 20)

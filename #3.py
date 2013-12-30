@@ -1,7 +1,7 @@
 __author__ = 'Nafiul Islam'
 __title__ = 'Largest prime factor'
 
-number_in_question = long(600851475143)
+number_in_question = 600851475143
 
 
 def largest_prime_factor(number_in_question):
@@ -24,10 +24,10 @@ def largest_prime_factor(number_in_question):
         else:
             divisor += 1
 
-    print "Factors were:"
-    print factors
+    print("Factors were:")
+    print(factors)
     return max(factors)
 
 
 if __name__ == "__main__":
-    print "The largest factor: "+ str(largest_prime_factor(600851475143))
+    print("The largest factor: "+ str(largest_prime_factor(600851475143)))
