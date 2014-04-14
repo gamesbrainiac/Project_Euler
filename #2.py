@@ -2,24 +2,21 @@ __author__ = 'Nafiul Islam'
 __title = 'Even Fibonacci numbers'
 
 
-def fibonacci(num=0):
-    NUM_ZERO = 1
-    NUM_ONE = 2
+def fibonacci(start=1):
+    a, b = start, start
+    yield start
+    while True:
+        _ret = a + b
+        a, b = b, _ret
+        yield _ret
 
-    if num == 0:
-        return NUM_ZERO
-    if num == 1:
-        return NUM_ONE
-    else:
-        return fibonacci(num - 1) + fibonacci(num - 2)
+if __name__ == '__main__':
 
-if __name__ == "__main__":
-    sumOfNumbers = 0
-    var = 0
+    total = 0
+    for i in fibonacci():
+        if i < 4*10**6 and not i % 2:
+            total += i
+        elif i > 4*10**6:
+            break
 
-    while fibonacci(var) < 4 * (10 ** 6):
-        if fibonacci(var) % 2 == 0:
-            sumOfNumbers += fibonacci(var)
-        var += 1
-
-    print(sumOfNumbers)
+    print(total)

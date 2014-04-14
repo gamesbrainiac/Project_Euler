@@ -1,10 +1,7 @@
 __author__ = 'Nafiul Islam'
 __title = 'Multiples of 3 and 5'
 
-sum_of_multiples = 0
 
-for i in range(0, 1000):
-    if i % 3 == 0 or i % 5 == 0:
-        sum_of_multiples += i
+if __name__ == '__main__':
 
-print(sum_of_multiples)
+    print(sum(i for i in range(0, 1000) if not i % 3 or not i % 5))
