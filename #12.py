@@ -11,6 +11,7 @@ def triangles():
         yield (i * (i + 1)) // 2
 
 
+# Perhaps, if cache was added, this would be faster
 def divisors(n):
     l = [1]
 
@@ -27,6 +28,7 @@ def divisors(n):
     return len(set([reduce(mul, pair)
                     for sets in [combinations(l, n) for n in range(2, len(l))]
                     for pair in sets])) + 1
+
 
 if __name__ == '__main__':
 
