@@ -16,15 +16,14 @@ def num_collatz(n):
             return total
         if not n % 2:
             n //= 2
-        elif n % 2:
-            if n == 1:
-                break
+        else:
             n = (3 * n) + 1
         total += 1
     return total
 
+
 m = 1
-for i in range(13, 10**6, 2):
+for i in range(13, 10 ** 6, 2):
     if num_collatz(i) > m:
         m = num_collatz(i)
         print(i, m)
